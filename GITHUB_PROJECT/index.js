@@ -1,5 +1,10 @@
 async function github(){
+    try{
     const res = await fetch("https://api.github.com/users");
+
+    if(!res.ok){
+        throw new Error("Data is not present or accessible right now!")
+    }
 
     const data = await res.json();
 
@@ -23,6 +28,10 @@ async function github(){
         element.append(image,username,anchor);
         parent.append(element);
     }
+}
+catch(err){
+    console.log("SOme error occured")
+}
 
 }
 

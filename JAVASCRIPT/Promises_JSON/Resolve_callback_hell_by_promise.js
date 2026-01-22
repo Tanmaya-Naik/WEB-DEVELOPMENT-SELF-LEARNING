@@ -89,16 +89,33 @@ function deliverOrder(orderDetail){
 }
 
 
-placedOrder(orderDetail)
-.then((orderDetail)=>preparingOrder(orderDetail))
-.then((orderDetail)=>pickupOrder(orderDetail))
-.then((orderDetail)=>deliverOrder(orderDetail))
-.then((orderDetail)=>{
-    console.log(orderDetail);
-})
-.catch((error)=>{
-    console.log("Error: ", error);
-}).
-finally(()=>{
-    console.log("I am doing cleanup");
-})
+// placedOrder(orderDetail)
+// .then((orderDetail)=>preparingOrder(orderDetail))
+// .then((orderDetail)=>pickupOrder(orderDetail))
+// .then((orderDetail)=>deliverOrder(orderDetail))
+// .then((orderDetail)=>{
+//     console.log(orderDetail);
+// })
+// .catch((error)=>{
+//     console.log("Error: ", error);
+// }).
+// finally(()=>{
+//     console.log("I am doing cleanup");
+// })
+
+async function ordering(){
+    try{
+    const res1= await placedOrder(orderDetail);
+    
+    const res2=await preparingOrder(orderDetail);
+    const res3=await pickupOrder(orderDetail);
+    const res4=await deliverOrder(orderDetail);
+
+    console.log(res4);
+    }
+    catch(err){
+        console.log("Error: ", err);
+    }
+}
+
+ordering();
