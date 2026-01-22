@@ -1,4 +1,4 @@
-console.log("Hello i am start");
+// console.log("Hello i am start");
 
 
 
@@ -19,35 +19,69 @@ console.log("Hello i am start");
                                 // })
 
 
-console.log("Hello i am end");
+// console.log("Hello i am end");
 
 
 
-//LETS DO PROMISE CHAINING
+ //LETS DO PROMISE CHAINING
 
-fetch("https://api.github.com/users")
-.then((resposne)=>{
-    return resposne.json();
-})
-.then((data)=>{
-    // console.log(data);
+// fetch("https://api.github.com/users")
+// .then((resposne)=>{
 
-    const parent=document.getElementById("first");
+//     if(!resposne.ok){
+//         throw new Error("DAta is not present in the server"); //it will recived by catch
+//     }
+//     return resposne.json();
+// })
+// .then((data)=>{
+   // console.log(data);
+
+//     const parent=document.getElementById("first");
     
 
-    for(let i=0;i<data.length;i++){
+//     for(let i=0;i<data.length;i++){
 
-        const image=document.createElement('img');
-     image.src=data[i].avatar_url;
-    image.style.height="40px";
-    image.style.width="40px";
+//         const image=document.createElement('img');
+//      image.src=data[i].avatar_url;
+//     image.style.height="40px";
+//     image.style.width="40px";
 
-      parent.append(image);
+//       parent.append(image);
 
-    }
+//     }
    
 
   
-    //JSON: JAVASCRIPT OBJECT NATION EK ESA FORMAT HAI KO KISI BHI LANGUAGE SAMAJH SAKTI HAI
-    //if we send json to all the language then they can understand this format and they can share data with each other 
+     //JSON: JAVASCRIPT OBJECT NATION EK ESA FORMAT HAI KO KISI BHI LANGUAGE SAMAJH SAKTI HAI
+     //if we send json to all the language then they can understand this format and they can share data with each other 
+// })
+// .catch((err)=>{
+//     const parent=document.getElementById("first");
+//     parent.textContent= err.message;
+// })
+
+//PROMISE ONLY GET REJECT WHEN INTERNET IS DOWN SERVER IS DOWN DNS IS DOWN 
+//IN ALL OTHER CASES WE GOT RESPONSE FROM SERVER SO IT IS CONSIDER AS PROMISE FULLFILL BUT CAN NOT CONSIDER AS PROMISE GET REJECT SO NEVER THINGK THIS
+
+
+
+//LETS CREATE A PROMISE
+
+const p1 = new Promise((resolve, reject)=>{
+    // reject("helol")
+
+    resolve({
+        name:"Tanu",
+        age:50
+
+    })
 })
+
+p1.then((response)=>{
+    console.log(response);
+}).
+catch((err)=>{
+    console.log(err);
+})
+
+// console.log(p1);
