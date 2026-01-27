@@ -30,38 +30,11 @@
     // element1.className='element';//ATTRIBUTE
     // element1.id='first';
 
-    const React = {
-    createElement:function (tag, attributes, children){
-                const element=document.createElement(tag);
-                element.textContent=children;
-
-                //attribute store as object so iterate over it bcz maybe too many attribute present
-                for(const key in attributes){
-                    if(key==='style'){
-                        Object.assign(element.style,attributes.style)
-                    }
-                    else{
-                        element[key]=attributes[key];
-
-                    }
-                    
-                }
-
-                return element;
-
-
-            }
-
-    }
 
 
 
 
-    const element1=React.createElement("h1", {className: "element", id:"first", style:{fontSize:"30px", backgroundColor:"orange", color:"white"}}, "Hello Mr Tanmaya");
-    root.append(element1);
 
-    const element2=React.createElement("h3", {className: "element", id:"second",style:{color:"red"}}, "Hello ahfauihfahj");
-    root.append(element2);
 
     /*
     attribute={
@@ -92,3 +65,49 @@
 
 //SO NOW WE SUCCESSFULLY ABLE TO CREATE A REUSABLE FUNCTION WHCIH CREATE ELEMENT AND PUSH COLOR 
    
+    const React = {
+    createElement:function (tag, attributes, children){
+                const element=document.createElement(tag);
+                element.textContent=children;
+
+                //attribute store as object so iterate over it bcz maybe too many attribute present
+                for(const key in attributes){
+                    if(key==='style'){
+                        Object.assign(element.style,attributes.style)
+                    }
+                    else{
+                        element[key]=attributes[key];
+
+                    }
+                    
+                }
+
+                return element;
+
+
+            }
+
+    }
+
+
+    
+
+
+
+//NOW LETS LEARN WHAT IS REACT DOM
+const ReactDOM = {
+    render: function (child, parent){
+        parent.append(child)
+
+    }
+}
+
+  const element1=React.createElement("h1", {className: "element", id:"first", style:{fontSize:"30px", backgroundColor:"orange", color:"white"}}, "Hello Mr Tanmaya");
+
+  const element2=React.createElement("h3", {className: "element", id:"second",style:{color:"red"}}, "Hello ahfauihfahj");
+  
+  console.log(element1);
+  const root=document.getElementById('root');
+  ReactDOM.render(element1,root);
+//   ReactDOM.render(element2,root);
+
