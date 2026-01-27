@@ -30,32 +30,37 @@
     // element1.className='element';//ATTRIBUTE
     // element1.id='first';
 
+    const React = {
+    createElement:function (tag, attributes, children){
+                const element=document.createElement(tag);
+                element.textContent=children;
 
-    function createElement(tag, attributes, children){
-        const element=document.createElement(tag);
-        element.textContent=children;
+                //attribute store as object so iterate over it bcz maybe too many attribute present
+                for(const key in attributes){
+                    if(key==='style'){
+                        Object.assign(element.style,attributes.style)
+                    }
+                    else{
+                        element[key]=attributes[key];
 
-        //attribute store as object so iterate over it bcz maybe too many attribute present
-        for(const key in attributes){
-            if(key==='style'){
-                Object.assign(element.style,attributes.style)
+                    }
+                    
+                }
+
+                return element;
+
+
             }
-            else{
-                element[key]=attributes[key];
-
-            }
-            
-        }
-
-        return element;
-
 
     }
 
-    const element1=createElement("h1", {className: "element", id:"first", style:{fontSize:"30px", backgroundColor:"orange", color:"white"}}, "Hello Mr Tanmaya");
+
+
+
+    const element1=React.createElement("h1", {className: "element", id:"first", style:{fontSize:"30px", backgroundColor:"orange", color:"white"}}, "Hello Mr Tanmaya");
     root.append(element1);
 
-    const element2=createElement("h3", {className: "element", id:"second"}, "Hello ahfauihfahj");
+    const element2=React.createElement("h3", {className: "element", id:"second",style:{color:"red"}}, "Hello ahfauihfahj");
     root.append(element2);
 
     /*
@@ -83,4 +88,7 @@
     }
 }
     */
+
+
+//SO NOW WE SUCCESSFULLY ABLE TO CREATE A REUSABLE FUNCTION WHCIH CREATE ELEMENT AND PUSH COLOR 
    
