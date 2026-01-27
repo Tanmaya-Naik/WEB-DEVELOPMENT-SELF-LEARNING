@@ -65,42 +65,42 @@
 
 //SO NOW WE SUCCESSFULLY ABLE TO CREATE A REUSABLE FUNCTION WHCIH CREATE ELEMENT AND PUSH COLOR 
    
-    const React = {
-    createElement:function (tag, attributes, children){
-                const element=document.createElement(tag);
-                element.textContent=children;
+//     const React = {
+//     createElement:function (tag, attributes, children){
+//                 const element=document.createElement(tag);
+//                 element.textContent=children;
 
-                //attribute store as object so iterate over it bcz maybe too many attribute present
-                for(const key in attributes){
-                    if(key==='style'){
-                        Object.assign(element.style,attributes.style)
-                    }
-                    else{
-                        element[key]=attributes[key];
+//                 //attribute store as object so iterate over it bcz maybe too many attribute present
+//                 for(const key in attributes){
+//                     if(key==='style'){
+//                         Object.assign(element.style,attributes.style)
+//                     }
+//                     else{
+//                         element[key]=attributes[key];
 
-                    }
+//                     }
                     
-                }
+//                 }
 
-                return element;
+//                 return element;
 
 
-            }
+//             }
 
-    }
+//     }
 
 
     
 
 
 
-//NOW LETS LEARN WHAT IS REACT DOM
-const ReactDOM = {
-    render: function (child, parent){
-        parent.append(child)
+// //NOW LETS LEARN WHAT IS REACT DOM
+// const ReactDOM = {
+//     render: function (child, parent){
+//         parent.append(child)
 
-    }
-}
+//     }
+// }
 
   const element1=React.createElement("h1", {className: "element", id:"first", style:{fontSize:"30px", backgroundColor:"orange", color:"white"}}, "Hello Mr Tanmaya");
 
@@ -109,5 +109,54 @@ const ReactDOM = {
   console.log(element1);
   const root=document.getElementById('root');
   ReactDOM.render(element1,root);
-//   ReactDOM.render(element2,root);
+  ReactDOM.render(element2,root);
 
+
+
+  //ORIGINA REACT WORKING
+  
+// const reactElement = {
+//     type:'h1',
+//     props:{
+//         className:"element",
+//         id:"first",
+//         style:{fontSize:"30px",backgroundColor:"orange",color:"white"},
+//         children: "Hello Coder Army"
+//     }
+// }
+
+
+// const ReactDOM = {
+//     render: function(reactElement,root){
+       
+//        root.innerHTML = '';
+
+//        const element =  document.createElement(reactElement.type);
+        
+//       const {props} = reactElement;
+
+//       for(const key in props){
+//         if(key==='style'){
+//             Object.assign(element.style,props.style);
+//         }
+//         else if(key==='children'){
+//             element.textContent = props[key];
+//         }
+//         else{
+//             element[key] = props[key];
+//         }
+//       }
+
+//       root.append(element);
+//     }
+// }
+
+
+
+
+// Main container to render react elements
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// root.render(div);
+
+// console.log(div);
