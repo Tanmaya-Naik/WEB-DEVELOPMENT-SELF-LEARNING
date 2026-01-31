@@ -6,12 +6,13 @@ import { useState } from "react";
 function App(){
 
   const [user,setUsers]=useState([]);
-  const [name,setName]=useState("");
+  // const [name,setName]=useState("");
+  const [count,setCount]=useState(30);
 
   useEffect(()=>{
     async function Githubprofile() {
     
-    const response = await fetch("https://api.github.com/users");
+    const response = await fetch(`https://api.github.com/users?per_page=${count}`);
     const data= await response.json();
     setUsers(data);
     
@@ -19,7 +20,7 @@ function App(){
 
   Githubprofile();
 
-  },[])   //pehle baki ka kam karo then useeffect k andar k kam which is side ka kam is execute after everything get complete
+  },[count])   //pehle baki ka kam karo then useeffect k andar k kam which is side ka kam is execute after everything get complete
 //empty array means only ek bar at last run hoga rerender k time useeffect wala kam run nehi hoga samajhe na bro
   // async function Githubprofile() {
     
@@ -32,13 +33,13 @@ function App(){
   // Githubprofile();
 
 
-  function handleChange(e){
-    setName(e.target.value.toUpperCase());
-  }
+  // function handleChange(e){
+  //   setName(e.target.value.toUpperCase());
+  // }
   return (
     <> 
      <h1>Github Users Project</h1>
-     <input type="text" value={name} onChange={handleChange} />
+     <input type="number" value={count} onChange={(e)=>setCount(e.target.value)} />
      <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexWrap:"wrap",gap:"10px"}}>
       {
           user.map(user=>(
