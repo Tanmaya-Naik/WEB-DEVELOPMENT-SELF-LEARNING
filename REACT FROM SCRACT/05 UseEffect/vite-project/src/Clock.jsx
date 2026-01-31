@@ -21,7 +21,7 @@ function Clock(){
     },[show])  //USEEFFECT HOOK ONLY RETURN EITHER OF THESE TWO 1- IT RETURN NOTHIGN OR 2- IT RETURN A CALLBACK
 
 
-    return (
+    return ( 
         <>
         <button onClick={()=>setShow(!show)}>{show?"hide":"show"}</button>
         {show && <h1>Current Time: {time}</h1>}
@@ -30,3 +30,22 @@ function Clock(){
 }
 
 export default Clock;
+
+
+
+
+//JO PRIMITIVE DATATYPE HAIN WO VALUE K BASE MAIN COMPARE HONGE OR JO NON PRIMITIVE HAIN WO REFERENCE K BASE MAIN COMPARE HONGE LIKE OBJECT ARRAY 
+
+//LETS LEARN KEY 
+
+/*
+Key: children(Dynamic child)
+key:unique(index number mat dena)
+
+
+*/
+
+
+function List(){
+    const [foodItems,setFood] = useState(["Apple","orange","Banana"]);
+}
