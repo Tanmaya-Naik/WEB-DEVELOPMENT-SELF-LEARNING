@@ -44,3 +44,22 @@ key:unique(index number mat dena)
 
 
 */
+
+
+//KEY KO KABHI INDEX MAT DENA SAMJHE toh compare karne k time problem ata 
+//key ager kuch b nehi denge toh react vertual dom position k basis pe check karega
+
+
+//ADVANTAGE OF KEY LETS SEE GO TO ager key nehi denge toh ager kabhi new element add karenge toh 
+//value mismatch hoga kyun ki react key ko ek element k sath bind kar dega so hame problme nehi hoga
+
+
+//IMPORTANT IMPORTANT IMPORTANT ---> AGER HAM KHUD SE KEY PROVIDE NEHI KARENGE TOH REACT KHUD SE INDEX KO HI KEY ASSUME KAR K BIND KAR DETA HAI
+//IMPORTANT IMPORTANT IMPORTANT ---> AGER HAM KHUD SE KEY PROVIDE NEHI KARENGE TOH REACT KHUD SE INDEX KO HI KEY ASSUME KAR K BIND KAR DETA HAI
+//IMPORTANT IMPORTANT IMPORTANT ---> AGER HAM KHUD SE KEY PROVIDE NEHI KARENGE TOH REACT KHUD SE INDEX KO HI KEY ASSUME KAR K BIND KAR DETA HAI   
+//ISLIYE HAMESHA NAME KO HI KEY BANA DO
+
+
+//AND STATE ALSO ATTACHED TO KEY 
+//AND STATE ALSO ATTACHED TO KEY 
+//AND STATE ALSO ATTACHED TO KEY 
