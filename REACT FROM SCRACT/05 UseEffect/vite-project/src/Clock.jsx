@@ -44,8 +44,3 @@ key:unique(index number mat dena)
 
 
 */
-
-
-function List(){
-    const [foodItems,setFood] = useState(["Apple","orange","Banana"]);
-}
