@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Sum from './Sum'
 import { useMemo } from 'react';
+
+import Post from './Post';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +30,10 @@ function App() {
   //   return total;
   // }
 
+
+
+  //LETS LEARN ABOUT USEMEMO
+
     const prime=useMemo(()=>{
         let total=0;
         if(number>1){
@@ -48,6 +54,16 @@ function App() {
         return total;
   },[number])
 
+
+  //LETS LEARN ABOUT USECALLBACK HOOK    -->--->-->--> USEMEMO HOOK EK VALUE KO REMEMBER KAR TA HAI AND USECALLBACK HOOK EK FUNCTION KO ACROSS THE CODE REMEMBER KARTA HAI HUI NA BAAT SAMSAJH
+  
+  const handleClick = useCallback(()=>{
+           console.log("Hello ji Handel Click", count)
+  },[count]);
+
+  const obj = useMemo(()=>{
+    return {name:"Tanu",age:30};
+  },[])
   
   console.log("App render");
 
@@ -59,7 +75,9 @@ function App() {
        <h1>ur current number: {number} </h1>
        <button onClick={()=> setNumber(number+1)}>Increment the numberr val</button>
        <h3>Total Prime Number: {prime}</h3>
+       <button onClick={handleClick}>Click</button>
        <Sum number={number}></Sum>
+       <Post value={obj}></Post>
     </>
   ) 
 }
