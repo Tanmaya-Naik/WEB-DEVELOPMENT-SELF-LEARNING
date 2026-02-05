@@ -1,34 +1,59 @@
 import { useRef } from "react";
 
+function Video() {
+  const videoRef = useRef(null);
 
+  function playVideo() {
+    if (!videoRef.current) return;
+    videoRef.current.play();
+  }
 
+  function pauseVideo() {
+    if (!videoRef.current) return;
+    videoRef.current.pause();
+  }
 
-function Video(){
+  function restartVideo() {
+    if (!videoRef.current) return;
+    videoRef.current.currentTime = 0;
+  }
 
-    //LETS TAKE CONTROL OVER VIDEOREF
-    const videoRef=useRef(null);
+  function seekForward(seconds = 2) {
+    if (!videoRef.current) return;
 
-    function handleStart(){
-        videoRef.current.play();
-    }
-    function handleStop(){
-        videoRef.current.pause();
-    }
-    function handleRestart(){
-        videoRef.current.currentTime = 0;
-    }
+    const video = videoRef.current;
+    const newTime = video.currentTime + seconds;
 
-    return (
-        <>
-        <video src="/tanu.mp4" width="600" height="400" ref={videoRef}></video>
+    video.currentTime = Math.min(newTime, video.duration);
+  }
 
-        <div>
-            <button onClick={handleStart}>Start</button>
-            <button onClick={handleStop}>Pause</button>
-            <button onClick={handleRestart}>Restart</button>
-        </div>
-        </>
-    )
+  function seekBackward(seconds = 2) {
+    if (!videoRef.current) return;
+
+    const video = videoRef.current;
+    const newTime = video.currentTime - seconds;
+
+    video.currentTime = Math.max(newTime, 0);
+  }
+
+  return (
+    <>
+      <video
+        ref={videoRef}
+        src="/tanu.mp4"
+        width="600"
+        height="400"
+      />
+
+      <div>
+        <button onClick={playVideo}>Play</button>
+        <button onClick={pauseVideo}>Pause</button>
+        <button onClick={restartVideo}>Restart</button>
+        <button onClick={() => seekForward(2)}>+2s</button>
+        <button onClick={() => seekBackward(2)}>-2s</button>
+      </div>
+    </>
+  );
 }
 
 export default Video;
