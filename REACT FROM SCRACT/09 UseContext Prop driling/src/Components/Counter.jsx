@@ -1,0 +1,28 @@
+import { useState } from "react";
+
+
+
+
+function Counter({counter,setCounter}){
+
+    //WE REMOVE THE USESTATE CODE OR LIFT FROM THIS TO TO PARENT WHERE IT CAN BE ACCESSIBLE BY OTHER COMPONENT ALSO
+
+
+    return (
+    <>
+    <h1>Counter is : {counter}</h1>
+    <button onClick={()=> setCounter(counter=>counter+1)}>Increment</button>
+    <button onClick={()=> setCounter(counter=>counter-1)}>Decrement</button>
+    </>
+    )
+
+}
+
+export default Counter;
+//THIS PROCESS OF LIFTING THE STATE TO THE MAIN COMMON PARENT IS CALLED STATE LIFTING
+//AND THE PROCESS OF SENDING THE PROP THROUGH EVERY CHILD COMPONENT IS CALLED PROP DRILING
+
+
+
+//AND THE PROBLEM OCCURS BECAUSE OF PASSING THE PROP TO EVERY CHILD WHO DONT NEED IT ALSO RE RENDER WHENEVER THE VALUE OF STATE IS CHANGE
+//SO TO REMOVE THE UNNESSARY RE RENDER BCZ OF PROP DRILING IS REMOVE MY USING USECONTEXT PROP
