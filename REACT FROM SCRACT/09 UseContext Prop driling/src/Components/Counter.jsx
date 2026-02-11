@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CounterContext } from "../App";
 
 
 
-
-function Counter({counter,setCounter}){
+function Counter(){
 
     //WE REMOVE THE USESTATE CODE OR LIFT FROM THIS TO TO PARENT WHERE IT CAN BE ACCESSIBLE BY OTHER COMPONENT ALSO
 
+    const {counter, setCounter} =useContext(CounterContext)
 
     return (
     <>

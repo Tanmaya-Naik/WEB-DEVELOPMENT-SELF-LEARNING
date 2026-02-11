@@ -1,12 +1,12 @@
 
 import Display from "./Display";
-
-function Header({counter}){
+ 
+function Header(){
 
     return (
     <>
     <h1>I am header component</h1>
-    <Display counter={counter}/>
+    <Display/>
     </>
     )
     

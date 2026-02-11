@@ -1,8 +1,11 @@
-
+import { useContext } from "react";
+import { CounterContext } from "../App";
 import Counter from "./Counter";
 
 
-function Body({counter,setCounter}){
+function Body(){
+
+    const {counter, setCounter} =useContext(CounterContext)
 
     return (
     <>
