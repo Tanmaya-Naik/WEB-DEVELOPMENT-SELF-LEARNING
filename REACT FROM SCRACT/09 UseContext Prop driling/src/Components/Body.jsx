@@ -12,7 +12,7 @@ function Body(){
         {id:2, name:"creatine", price:1050},
         {id:3, name:"dahi", price:150},
         {id:4, name:"protein", price:14000},
-        {id:5, name:"condom", price:1500},
+        {id:5, name:"Chicken", price:1500},
         {id:6, name:"butter", price:4150},
 
     ])
