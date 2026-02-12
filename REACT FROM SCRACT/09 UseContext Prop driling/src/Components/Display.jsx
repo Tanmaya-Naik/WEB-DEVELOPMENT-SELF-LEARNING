@@ -1,10 +1,10 @@
 
 import { useContext } from "react";
-import { CounterContext } from "../App";
+// import { CounterContext } from "../App";
 
 //LETS UNDERSTAND HOW TO USE THE VALUE PRODUCE BY CREATECONTEXT
 function Display(){
-     const {counter} = useContext(CounterContext); //CounterContext gives value as object
+    //  const {counter} = useContext(CounterContext); //CounterContext gives value as object
     return (
     <>
     <h1>I am Display component my work is to display the count : {counter} </h1>

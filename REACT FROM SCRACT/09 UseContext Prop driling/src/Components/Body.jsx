@@ -1,16 +1,32 @@
-import { useContext } from "react";
-import { CounterContext } from "../App";
-import Counter from "./Counter";
-
+import { useContext, useState } from "react";
+// import { CounterContext } from "../App";
+// import Counter from "./Counter";
+import Product from "./Product";
 
 function Body(){
 
-    const {counter, setCounter} =useContext(CounterContext)
+    // const {counter, setCounter} =useContext(CounterContext)
+
+    const [items, setItems] = useState([
+        {id:1, name:"Milk", price:1509},
+        {id:2, name:"creatine", price:1050},
+        {id:3, name:"dahi", price:150},
+        {id:4, name:"protein", price:14000},
+        {id:5, name:"condom", price:1500},
+        {id:6, name:"butter", price:4150},
+
+    ])
+
 
     return (
     <>
     <h1>I am Body component</h1>
-    <Counter counter={counter} setCounter={setCounter}/>
+    {/* <Counter counter={counter} setCounter={setCounter}/> */}
+    <div style={{display:"flex", gap:"50px"}}>
+        {
+            items.map((item)=><Product key={item.id} item={item}/>)
+        }
+    </div>
     </>
     )
 

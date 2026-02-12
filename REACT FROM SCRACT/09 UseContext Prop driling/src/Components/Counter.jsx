@@ -1,25 +1,25 @@
-import { useContext, useState } from "react";
-import { CounterContext } from "../App";
+// import { useContext, useState } from "react";
+// import { CounterContext } from "../App";
 
 
 
-function Counter(){
+// function Counter(){
 
-    //WE REMOVE THE USESTATE CODE OR LIFT FROM THIS TO TO PARENT WHERE IT CAN BE ACCESSIBLE BY OTHER COMPONENT ALSO
+//     //WE REMOVE THE USESTATE CODE OR LIFT FROM THIS TO TO PARENT WHERE IT CAN BE ACCESSIBLE BY OTHER COMPONENT ALSO
 
-    const {counter, setCounter} =useContext(CounterContext)
+//     const {counter, setCounter} =useContext(CounterContext)
 
-    return (
-    <>
-    <h1>Counter is : {counter}</h1>
-    <button onClick={()=> setCounter(counter=>counter+1)}>Increment</button>
-    <button onClick={()=> setCounter(counter=>counter-1)}>Decrement</button>
-    </>
-    )
+//     return (
+//     <>
+//     <h1>Counter is : {counter}</h1>
+//     <button onClick={()=> setCounter(counter=>counter+1)}>Increment</button>
+//     <button onClick={()=> setCounter(counter=>counter-1)}>Decrement</button>
+//     </>
+//     )
 
-}
+// }
 
-export default Counter;
+// export default Counter;
 //THIS PROCESS OF LIFTING THE STATE TO THE MAIN COMMON PARENT IS CALLED STATE LIFTING
 //AND THE PROCESS OF SENDING THE PROP THROUGH EVERY CHILD COMPONENT IS CALLED PROP DRILING
 
