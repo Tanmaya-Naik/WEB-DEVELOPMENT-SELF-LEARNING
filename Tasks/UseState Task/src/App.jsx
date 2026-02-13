@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import ThemeWrap from './Componenets/Theme';
 import CharCount from './Componenets/CharCount';
+import Multiform from './Componenets/MultiForm';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
       <h1>Hello Tanu bro</h1>
       <h2>i Am your shubhrata</h2>
       <CharCount/>
+      <Multiform/>
     </ThemeWrap>
     </>
   )
