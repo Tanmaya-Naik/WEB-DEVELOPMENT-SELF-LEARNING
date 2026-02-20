@@ -22,8 +22,6 @@ function App() {
       <Link to={"/Community"}>Community</Link>
       <Link to={"/Detail"}>Detail</Link>
       <Link to={"/About"}>About us</Link>
-      <Link to={"/About/Customer"}>Customer</Link>
-      <Link to={"/About/Service"}>Service</Link>
     </nav>
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
