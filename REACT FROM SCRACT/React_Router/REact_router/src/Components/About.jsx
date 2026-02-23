@@ -7,6 +7,7 @@ export default function About(){
     return (
         <>
         <nav>
+            <Link to={""}>About us</Link>
             <Link to={"Customer"}>Customer</Link>
             <Link to={"Service"}>Service</Link>
         </nav>

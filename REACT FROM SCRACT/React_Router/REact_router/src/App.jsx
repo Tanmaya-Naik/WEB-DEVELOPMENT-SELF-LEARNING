@@ -16,13 +16,7 @@ function App() {
   
   return (
     <BrowserRouter>
-    <nav>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/Contact"}>Contact</Link>
-      <Link to={"/Community"}>Community</Link>
-      <Link to={"/Detail"}>Detail</Link>
-      <Link to={"/About"}>About us</Link>
-    </nav>
+   
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/Contact' element={<Contact></Contact>}></Route>
