@@ -11,7 +11,7 @@ export const CartContext = createContext();
 //LETS LEARN ABOUT CREATECONTEXT AND USECONTEXT HOOK WORK 
 function App() {
 
-  //we lift he state count from the counter component to this 
+  //we lift the state count from the counter component to this 
   // const [counter,setCounter]= useState(0);
 
   const [cartItem, setcartItem] = useState(0);
