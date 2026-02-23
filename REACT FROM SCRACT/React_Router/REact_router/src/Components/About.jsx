@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export default function About(){
@@ -6,7 +7,6 @@ export default function About(){
     return (
         <>
         <nav>
-            <Link to={"/About"}>About us</Link>
             <Link to={"Customer"}>Customer</Link>
             <Link to={"Service"}>Service</Link>
         </nav>
