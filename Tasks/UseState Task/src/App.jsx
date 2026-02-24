@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import ThemeWrap from './Componenets/Theme';
 import CharCount from './Componenets/CharCount';
 import Multiform from './Componenets/MultiForm';
+import Debounce from './Componenets/Debounce';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,14 +12,15 @@ function App() {
 
   return (
     <>
-    <ThemeWrap dark={dark}>
+    {/* <ThemeWrap dark={dark}>
       <button onClick={()=>setDark(prev=>!prev)}>Toggle Theme</button>
 
       <h1>Hello Tanu bro</h1>
       <h2>i Am your shubhrata</h2>
       <CharCount/>
       <Multiform/>
-    </ThemeWrap>
+    </ThemeWrap> */}
+    <Debounce></Debounce>
     </>
   )
 }
