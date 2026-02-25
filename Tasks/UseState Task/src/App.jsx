@@ -5,6 +5,8 @@ import ThemeWrap from './Componenets/Theme';
 import CharCount from './Componenets/CharCount';
 import Multiform from './Componenets/MultiForm';
 import Debounce from './Componenets/Debounce';
+import Autofocus from './Componenets/AutoFocus';
+import StopWatch from './Componenets/Stopwatch';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +23,8 @@ function App() {
       <Multiform/>
     </ThemeWrap> */}
     <Debounce></Debounce>
+    <Autofocus></Autofocus>
+    <StopWatch></StopWatch>
     </>
   )
 }
