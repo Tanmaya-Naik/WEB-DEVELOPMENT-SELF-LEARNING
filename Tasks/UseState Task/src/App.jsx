@@ -7,6 +7,7 @@ import Multiform from './Componenets/MultiForm';
 import Debounce from './Componenets/Debounce';
 import Autofocus from './Componenets/AutoFocus';
 import StopWatch from './Componenets/Stopwatch';
+import ExpensiveCalculation from './Componenets/Expensive_calculation';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,9 +23,11 @@ function App() {
       <CharCount/>
       <Multiform/>
     </ThemeWrap> */}
-    <Debounce></Debounce>
+    {/* <Debounce></Debounce>
     <Autofocus></Autofocus>
-    <StopWatch></StopWatch>
+    <StopWatch></StopWatch> */}
+
+    <ExpensiveCalculation></ExpensiveCalculation>
     </>
   )
 }
