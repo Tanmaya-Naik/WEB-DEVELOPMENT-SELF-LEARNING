@@ -8,6 +8,7 @@ import Debounce from './Componenets/Debounce';
 import Autofocus from './Componenets/AutoFocus';
 import StopWatch from './Componenets/Stopwatch';
 import ExpensiveCalculation from './Componenets/Expensive_calculation';
+import Parent from './Componenets/Child_rerender';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,8 @@ function App() {
     <Autofocus></Autofocus>
     <StopWatch></StopWatch> */}
 
-    <ExpensiveCalculation></ExpensiveCalculation>
+    {/* <ExpensiveCalculation></ExpensiveCalculation> */}
+    <Parent></Parent>
     </>
   )
 }
